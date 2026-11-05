@@ -1,0 +1,14 @@
+digraph Scheduling {
+  rankdir=TB; node [shape=box, style="rounded,filled", fillcolor="#edf3ff", color="#7294cf", fontname="Arial"];
+  start [shape=oval,label="Start / data loaded"]; fixed [label="Identify mandatory fixed-time sessions"];
+  fixedloop [shape=diamond,label="More fixed sessions?"]; fixedcheck [label="Check slot + room against hard constraints"];
+  remain [label="Sort remaining sessions: students desc, course code, theory before lab"];
+  next [shape=diamond,label="More unscheduled sessions?"]; slots [label="Generate candidate slots (soft-clean first)"];
+  slot [shape=diamond,label="More candidate slots?"]; room [label="Try suitable rooms (best-fit capacity)"];
+  valid [shape=diamond,label="All hard constraints pass?"]; assign [label="Record assignment + soft warnings"];
+  fail [label="Record NO_ROOM or CONSTRAINT + reason"];
+  finish [shape=oval,label="Generate report and finish"];
+  start->fixed->fixedloop; fixedloop->fixedcheck [label="yes"]; fixedcheck->fixedloop; fixedloop->remain [label="no"];
+  remain->next; next->slots [label="yes"]; slots->slot; slot->room [label="yes"]; room->valid; valid->assign [label="yes"]; valid->room [label="no / next room"];
+  room->slot [label="no suitable room"] ; slot->fail [label="no"] ; assign->next; fail->next; next->finish [label="no"];
+}

@@ -1,0 +1,7 @@
+# id | name | assigned courses | unavailable | preferred
+I01 | Dr. Aylin Demir | SENG101 | - | MORNING
+I02 | Dr. Mehmet Kaya | SENG201,SENG301 | FRI | -
+I03 | Dr. Selin Arslan | SENG102,SENG302 | - | AFTERNOON
+I04 | Dr. Can Yilmaz | SENG202 | - | -
+I05 | Dr. Ece Sahin | - | MON 09:00-11:00 | MORNING
+I06 | Dr. Bora Aksoy | - | - | AFTERNOON

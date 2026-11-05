@@ -1,0 +1,7 @@
+code,title,year,instructorId,theoryHours,labHours,students,roomType
+SENG101,Introduction to Software Engineering,1,I01,3,2,65,LABORATORY
+SENG102,Programming Fundamentals,1,I03,3,2,72,LABORATORY
+SENG201,Object-Oriented Programming,2,I02,3,2,55,LABORATORY
+SENG202,Data Structures,2,I04,3,2,48,LABORATORY
+SENG301,Software Architecture,3,I02,3,0,42,LABORATORY
+SENG302,Database Systems,3,I03,2,2,58,LABORATORY

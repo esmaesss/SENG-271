@@ -1,0 +1,8 @@
+digraph SENG271 {
+  rankdir=LR; graph [fontname="Arial", bgcolor="white"]; node [shape=box, style="rounded,filled", fontname="Arial", fillcolor="#eaf0fb", color="#8ba2c8"]; edge [fontname="Arial", color="#64748b"];
+  Main -> MainFrame; MainFrame -> DataLoader; MainFrame -> Scheduler; MainFrame -> TimetablePrinter; MainFrame -> EmailDraftGenerator; MainFrame -> TimetableEditor;
+  DataLoader -> DataStore; DataStore -> Course; DataStore -> Instructor; DataStore -> Room; DataStore -> SpecialRequest;
+  Course -> Session; Session -> TimeSlot [style=dashed]; Timetable -> Assignment; Assignment -> Session; Assignment -> Room; Assignment -> TimeSlot;
+  Scheduler -> ConstraintChecker; Scheduler -> Timetable; Scheduler -> SchedulingReport; ConstraintChecker -> Violation; TimetableEditor -> ConstraintChecker; TimetableEditor -> Timetable;
+  TimetablePrinter -> Timetable; TimetablePrinter -> SchedulingReport;
+}
